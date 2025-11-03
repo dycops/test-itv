@@ -1,9 +1,9 @@
 const apiRoutes: Record<string, string> = {
-  '/api/users/123': '/test-itv/api/users/123.json',
-  '/api/weather?city=Moscow': '/test-itv/api/weather/moscow.json',
-  '/api/weather?city=London': '/test-itv/api/weather/london.json',
-  '/api/stocks?symbols=AAPL,GOOG': '/test-itv/api/stocks/aapl-goog.json',
-  '/api/dashboard': '/test-itv/api/dashboard.json',
+  '/test-itv/api/users/123': '/test-itv/api/users/123.json',
+  '/test-itv/api/weather?city=Moscow': '/test-itv/api/weather/moscow.json',
+  '/test-itv/api/weather?city=London': '/test-itv/api/weather/london.json',
+  '/test-itv/api/stocks?symbols=AAPL,GOOG': '/test-itv/api/stocks/aapl-goog.json',
+  '/test-itv/api/dashboard': '/test-itv/api/dashboard.json',
 }
 
 const originalFetch = window.fetch
@@ -17,22 +17,22 @@ export function initApiMocks() {
         let mockPath: string | undefined
 
         if (url === '/test-itv/api/dashboard') {
-          mockPath = apiRoutes['/api/dashboard']
+          mockPath = apiRoutes['/test-itv/api/dashboard']
         } else if (url.startsWith('/test-itv/api/users/123')) {
-          mockPath = apiRoutes['/api/users/123']
+          mockPath = apiRoutes['/test-itv/api/users/123']
         } else if (url.startsWith('/test-itv/api/weather')) {
           const urlObj = new URL(url, window.location.origin)
           const city = urlObj.searchParams.get('city')
           if (city === 'Moscow') {
-            mockPath = apiRoutes['/api/weather?city=Moscow']
+            mockPath = apiRoutes['/test-itv/api/weather?city=Moscow']
           } else if (city === 'London') {
-            mockPath = apiRoutes['/api/weather?city=London']
+            mockPath = apiRoutes['/test-itv/api/weather?city=London']
           }
         } else if (url.startsWith('/test-itv/api/stocks')) {
           const urlObj = new URL(url, window.location.origin)
           const symbols = urlObj.searchParams.get('symbols')
           if (symbols === 'AAPL,GOOG') {
-            mockPath = apiRoutes['/api/stocks?symbols=AAPL,GOOG']
+            mockPath = apiRoutes['/test-itv/api/stocks?symbols=AAPL,GOOG']
           }
         }
 
