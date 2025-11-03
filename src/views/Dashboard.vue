@@ -9,7 +9,7 @@ interface DashboardWidgetConfig {
   settings: Record<string, unknown>
 }
 
-const apiUrl = ref('/api/dashboard')
+const apiUrl = ref('/test-itv/api/dashboard')
 const { data, loading, error } = useDataFetcher<DashboardWidgetConfig[]>(apiUrl)
 
 // динамическая карта виджетов из папки widgets

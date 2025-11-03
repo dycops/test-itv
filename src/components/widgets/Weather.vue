@@ -24,7 +24,7 @@ watch(
   { immediate: true },
 )
 
-const url = computed(() => `/api/weather?city=${encodeURIComponent(activeCity.value)}`)
+const url = computed(() => `/test-itv/api/weather?city=${encodeURIComponent(activeCity.value)}`)
 const { data, loading, error, refetch } = useDataFetcher<WeatherData>(url)
 </script>
 

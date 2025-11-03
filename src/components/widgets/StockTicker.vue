@@ -12,7 +12,7 @@ const props = defineProps<Props>()
 const query = computed(() =>
   props.symbols && props.symbols.length ? props.symbols.join(',') : 'AAPL,GOOG',
 )
-const url = computed(() => `/api/stocks?symbols=${encodeURIComponent(query.value)}`)
+const url = computed(() => `/test-itv/api/stocks?symbols=${encodeURIComponent(query.value)}`)
 
 const { data, loading, error, refetch } = useDataFetcher<Ticker[]>(url)
 </script>

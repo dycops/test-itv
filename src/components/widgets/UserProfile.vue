@@ -3,7 +3,7 @@ import { ref, watchEffect } from 'vue'
 import { useDataFetcher } from '@/composables/useDataFetcher'
 import { useUserStore, type UserProfileData } from '@/stores/user'
 
-const url = ref('/api/users/123')
+const url = ref('/test-itv/api/users/123')
 const { data, loading, error } = useDataFetcher<UserProfileData>(url)
 
 const userStore = useUserStore()
