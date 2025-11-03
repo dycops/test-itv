@@ -1,0 +1,4 @@
+[
+  { "symbol": "AAPL", "price": 150.25, "change": 1.5 },
+  { "symbol": "GOOG", "price": 2750.75, "change": -10.2 }
+]
