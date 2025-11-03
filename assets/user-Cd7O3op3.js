@@ -1,0 +1,1 @@
+import{j as i}from"./index-BfpQcoZ-.js";const s=i("user",{state:()=>({profile:null,city:null}),actions:{setProfile(t){this.profile=t,this.city=t.city},setCity(t){this.city=t},reset(){this.profile=null,this.city=null}}});export{s as u};
