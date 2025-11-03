@@ -1,9 +1,9 @@
 const apiRoutes: Record<string, string> = {
-  '/api/users/123': '/api/users/123.json',
-  '/api/weather?city=Moscow': '/api/weather/moscow.json',
-  '/api/weather?city=London': '/api/weather/london.json',
-  '/api/stocks?symbols=AAPL,GOOG': '/api/stocks/aapl-goog.json',
-  '/api/dashboard': '/api/dashboard.json',
+  '/api/users/123': '/test-itv/api/users/123.json',
+  '/api/weather?city=Moscow': '/test-itv/api/weather/moscow.json',
+  '/api/weather?city=London': '/test-itv/api/weather/london.json',
+  '/api/stocks?symbols=AAPL,GOOG': '/test-itv/api/stocks/aapl-goog.json',
+  '/api/dashboard': '/test-itv/api/dashboard.json',
 }
 
 const originalFetch = window.fetch
