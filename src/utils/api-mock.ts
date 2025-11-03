@@ -12,15 +12,15 @@ export function initApiMocks() {
   window.fetch = async function (input: RequestInfo | URL, init?: RequestInit): Promise<Response> {
     const url = typeof input === 'string' ? input : input instanceof URL ? input.href : input.url
 
-    if (url.startsWith('/api/')) {
+    if (url.startsWith('/test-itv/api/')) {
       try {
         let mockPath: string | undefined
 
-        if (url === '/api/dashboard') {
+        if (url === '/test-itv/api/dashboard') {
           mockPath = apiRoutes['/api/dashboard']
-        } else if (url.startsWith('/api/users/123')) {
+        } else if (url.startsWith('/test-itv/api/users/123')) {
           mockPath = apiRoutes['/api/users/123']
-        } else if (url.startsWith('/api/weather')) {
+        } else if (url.startsWith('/test-itv/api/weather')) {
           const urlObj = new URL(url, window.location.origin)
           const city = urlObj.searchParams.get('city')
           if (city === 'Moscow') {
@@ -28,7 +28,7 @@ export function initApiMocks() {
           } else if (city === 'London') {
             mockPath = apiRoutes['/api/weather?city=London']
           }
-        } else if (url.startsWith('/api/stocks')) {
+        } else if (url.startsWith('/test-itv/api/stocks')) {
           const urlObj = new URL(url, window.location.origin)
           const symbols = urlObj.searchParams.get('symbols')
           if (symbols === 'AAPL,GOOG') {
